@@ -25,10 +25,10 @@ setup(
   version = '0.1.2',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Official software labs for MIT Introduction to Deep Learning (http://introtodeeplearning.com)',   # Give a short description about your library
-  author = 'Alexander Amini',                   # Type in your name
-  author_email = 'introtodeeplearning-staff@mit.edu',      # Type in your E-Mail
-  url = 'http://introtodeeplearning.com',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/aamini/introtodeeplearning/archive/v0.1.2.tar.gz',    # I explain this later on
+  author = 'Dionysis miaris',                   # Type in your name
+  author_email = 'miaris54@gmail.com',      # Type in your E-Mail
+  url = 'https://github.com/miaris98',   # Provide either the link to your github or to your website
+  download_url = 'https://github.com/miaris98/introtodeeplearning/archive/v0.1.2.tar.gz',    # I explain this later on
   keywords = ['deep learning', 'neural networks', 'tensorflow', 'introduction'],   # Keywords that define your package best
   install_requires=install_deps,
   classifiers=[
