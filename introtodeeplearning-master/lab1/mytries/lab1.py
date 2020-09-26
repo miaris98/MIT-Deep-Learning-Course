@@ -54,21 +54,24 @@ n_output_nodes = 3
 
 # First define the model 
 model = Sequential()
-
-'''TODO: Define a dense (fully connected) layer to compute z'''
 # Remember: dense layers are defined by the parameters W and b!
 # You can read more about the initialization of W and b in the TF documentation :) 
 # https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense?version=stable
 dense_layer = Dense(n_output_nodes, activation='sigmoid') # TODO
-# dense_layer = # TODO
+# dense_layer = Dense implements the operation: 
+# output = activation(dot(input, kernel) + bias) 
+# where activation is the element-wise activation 
+# function passed as the activation argument, 
+# kernel is a weights matrix created by the layer, 
+# and bias is a bias vector created by the layer 
+# (only applicable if use_bias is True). which is 
+# the default by the way
 
 # Add the dense layer to the model
 model.add(dense_layer)
 
 # Test model with example input
 x_input = tf.constant([[1,2.]], shape=(1,2))
-
-'''TODO: feed input into the model and predict the output!'''
 model_output = model(x_input).numpy()
 # model_output = # TODO
 print(model_output)
