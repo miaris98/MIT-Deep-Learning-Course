@@ -95,15 +95,11 @@ class SubclassModel(tf.keras.Model):
   # In the call function, we define the Model's forward pass.
   def call(self, inputs):
     return self.dense_layer(inputs)
-     
- #testing subclass network
- n_output_nodes = 3
- model = SubclassModel(n_output_nodes)
 
- x_input = tf.constant([[1,2.]], shape=(1,2))
-
- print(model.call(x_input))
- 
+n_output_nodes = 3
+model = SubclassModel(n_output_nodes)
+x_input = tf.constant([[1,2.]], shape=(1,2))
+print(model.call(x_input))
  
  ### Defining a model using subclassing and specifying custom behavior ###
 
