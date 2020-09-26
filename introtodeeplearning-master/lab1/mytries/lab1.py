@@ -143,16 +143,17 @@ print("Network output with activation: {}; network identity output: {}".format(o
 
 # y = x^2
 # Example: x = 3.0
-x = tf.Variable(3.0)
+x = tf.Variable(5.0)
 
 # Initiate the gradient tape
 with tf.GradientTape() as tape:
+  tape.watch(x)  
   # Define the function
-  y = x * x
+  y = x * x # the derivative(παραγωγος) of x^2 is 2x 
 # Access the gradient -- derivative of y with respect to x
 dy_dx = tape.gradient(y, x)
 
-assert dy_dx.numpy() == 6.0
+assert dy_dx.numpy() == 10.0
 
 
 ### Function minimization with automatic differentiation and SGD ###
