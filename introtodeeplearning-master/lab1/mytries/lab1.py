@@ -1,15 +1,10 @@
-%tensorflow_version 2.x
+#%tensorflow_version 2.x
 import tensorflow as tf
-
 # Download and import the MIT 6.S191 package
-!pip install mitdeeplearning
+#!pip install mitdeeplearning
 import mitdeeplearning as mdl
-
 import numpy as np
 import matplotlib.pyplot as plt
-
-
-
 
 ### Defining a network Layer ###
 
@@ -17,9 +12,9 @@ import matplotlib.pyplot as plt
 # input_shape: shape of the input
 # x: input to the layer
 
-class OurDenseLayer(tf.keras.layers.Layer):
+class OurDenseLayer(tf.keras.layers.Layer):# creating a subclass of the class Layer in Keras passing a name and a dtype
   def __init__(self, n_output_nodes):
-    super(OurDenseLayer, self).__init__()
+    super(OurDenseLayer,self).__init__()
     self.n_output_nodes = n_output_nodes
 
   def build(self, input_shape):
@@ -30,13 +25,8 @@ class OurDenseLayer(tf.keras.layers.Layer):
     self.b = self.add_weight("bias", shape=[1, self.n_output_nodes]) # note the dimensionality
 
   def call(self, x):
-    '''TODO: define the operation for z (hint: use tf.matmul)'''
-    z = tf.matmul(x, self.W) + self.b # TODO
-    # z = # TODO
-
-    '''TODO: define the operation for out (hint: use tf.sigmoid)'''
-    y = tf.sigmoid(z) # TODO
-    # y = # TODO
+    z = tf.matmul(x, self.W) + self.b 
+    y = tf.sigmoid(z) # passing to singmoid to get values from 0-1
     return y
 
 # Since layer parameters are initialized randomly, we will set a random seed for reproducibility
@@ -48,7 +38,7 @@ y = layer.call(x_input)
 
 # test the output!
 print(y.numpy())
-mdl.lab1.test_custom_dense_layer_output(y)
+mdl.lab1.test_custom_dense_layer_output(y)# testing output 
 
 
 
